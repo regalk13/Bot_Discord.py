@@ -53,6 +53,8 @@ class Fun(Cog):
 
                      "Outlook no es tan bueno",
 
+
+
                      "Muy dudoso."]
         await ctx.send(f"Pregunta: {question}\nRespuesta: {random.choice(responses)}")
 
