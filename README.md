@@ -10,13 +10,12 @@ The bot is executed through launcher.py, also init.py has a special path for lin
 
 Thanks for reading this and see you soon in the new projects.
 
-### Requirements
-
-- Python 3.8.2
-- SQLite and a browser for it.
-- Discord 1.4.2
-- The rest depends on certain things, but if you have errors in some libraries, just install them, with Pip.
-
+### You will need:
+    Python 3.8.0 or greater;
+    discord.py 1.3.0 or greater;
+    discord-ext-menus 1.0.0a or greater;
+    apscheduler 3.6.3 or greater.
+    
 ### Update 0.0.32
 
 Now you can use "Utils" for take a proof about the level ups, exp and messages that you need to archieve it.
