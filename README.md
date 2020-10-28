@@ -1,3 +1,5 @@
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg"></code>
+
 ## WELCOME TO BOT.PY BY REGALK13
 
 Welcome to this discord bot, which I wrote in python for a few weeks, my fault I did not publish all the updates, I will take it into account later, I hope you like it and can use it to create your own bots.
