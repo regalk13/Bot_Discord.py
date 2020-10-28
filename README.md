@@ -21,7 +21,7 @@ Thanks for reading this and see you soon in the new projects.
  
 ### To install Python:
 
-Download the latest version from here: https://www.python.org/downloads/.
+Download the latest version from [here](https://www.python.org/downloads/):
 ### Pip installs:
 
 #### On Unix based systems:
