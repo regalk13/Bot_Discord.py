@@ -6,6 +6,6 @@ The bot is executed through launcher.py, also init.py has a special path for lin
 
 Thanks for reading this and see you soon in the new projects.
 
-## Update 0.0.32
+### Update 0.0.32
 
 Now you can use "Utils" for take a proof about the level ups, exp and messages that you need to archieve it.
