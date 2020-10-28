@@ -39,4 +39,4 @@ discord.py apscheduler git+https://github.com/Rapptz/discord-ext-menus
 
 - If you need to ask something my twitter is open.
 
-- Finally I wanted to say that I hope I did a good job and I hope you enjoy it.
+- Finally I wanted to say that, I hope I did a good code and I hope you enjoy it.
