@@ -15,7 +15,7 @@ Thanks for reading this and see you soon in the new projects.
 - Python 3.8.2
 - SQLite and a browser for it.
 - Discord 1.4.2
-- the rest depends on certain things, but if you have errors in some libraries, just install them, with Pip.
+- The rest depends on certain things, but if you have errors in some libraries, just install them, with Pip.
 
 ### Update 0.0.32
 
