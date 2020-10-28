@@ -14,10 +14,10 @@ Thanks for reading this and see you soon in the new projects.
 ## Installation of required components
 
 ### You will need:
-    Python 3.8.0 or greater;
-    discord.py 1.3.0 or greater;
-    discord-ext-menus 1.0.0a or greater;
-    apscheduler 3.6.3 or greater.
+    - Python 3.8.0 or greater;
+    - `discord.py` 1.3.0 or greater;
+    - `discord-ext-menus` 1.0.0a or greater;
+    - `apscheduler` 3.6.3 or greater.
     
 ### Update 0.0.32
 
