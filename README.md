@@ -33,4 +33,10 @@ python3.x -m pip install discord.py apscheduler git+https://github.com/Rapptz/di
 pip install discord.py discord.py apscheduler git+https://github.com/Rapptz/discord-ext-menus, or py -m pip install discord.py 
 discord.py apscheduler git+https://github.com/Rapptz/discord-ext-menus
 
+## Final Notes
 
+- You are free to take this code and use it in your bots and modify it as you please.
+
+- If you need to ask something my twitter is open.
+
+- Finally I wanted to say that I hope I did a good job and I hope you enjoy it.
