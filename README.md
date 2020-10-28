@@ -18,6 +18,19 @@ Thanks for reading this and see you soon in the new projects.
  - Discord.py 1.3.0 or greater;
  - Discord-ext-menus 1.0.0a or greater;
  - Apscheduler 3.6.3 or greater.
+ 
+### To install Python:
+
+Download the latest version from here: https://www.python.org/downloads/.
+### Pip installs:
+
+#### On Unix based systems:
+
+python3.x -m pip install discord.py apscheduler git+https://github.com/Rapptz/discord-ext-menus (replace "x" with your subversion).
+
+#### On Windows:
+
+pip install discord.py discord.py apscheduler git+https://github.com/Rapptz/discord-ext-menus, or py -m pip install discord.py discord.py apscheduler git+https://github.com/Rapptz/discord-ext-menus
     
 ### Update 0.0.32
 
