@@ -34,19 +34,37 @@ pip install discord.py discord.py apscheduler git+https://github.com/Rapptz/disc
 discord.py apscheduler git+https://github.com/Rapptz/discord-ext-menus
 
 ## Updates
-#### Update 0.0.32
-#### Update 0.0.32  
-#### Update 0.0.32
-#### Update 0.0.32
-#### Update 0.0.32
-#### Update 0.0.32
-#### Update 0.0.32
-#### Update 0.0.32
-#### Update 0.0.32
-#### Update 0.0.32
-#### Update 0.0.32
-#### Update 0.0.32
-#### Update 0.0.32
+#### Update 0.0.01
+#### Update 0.0.02
+#### Update 0.0.03
+#### Update 0.0.04
+#### Update 0.0.05
+#### Update 0.0.06
+#### Update 0.0.07
+#### Update 0.0.08
+#### Update 0.0.09
+#### Update 0.0.10
+#### Update 0.0.11
+#### Update 0.0.12
+#### Update 0.0.13
+#### Update 0.0.14
+#### Update 0.0.15
+#### Update 0.0.16
+#### Update 0.0.17
+#### Update 0.0.18
+#### Update 0.0.19
+#### Update 0.0.20 
+#### Update 0.0.21
+#### Update 0.0.22
+#### Update 0.0.23
+#### Update 0.0.24
+#### Update 0.0.25
+#### Update 0.0.26
+#### Update 0.0.27
+#### Update 0.0.28
+#### Update 0.0.29
+#### Update 0.0.30
+#### Update 0.0.31
 #### Update 0.0.32
 
 Now you can use "Utils" for take a proof about the level ups, exp and messages that you need to archieve it.
