@@ -32,6 +32,8 @@ python3.x -m pip install discord.py apscheduler git+https://github.com/Rapptz/di
 
 pip install discord.py discord.py apscheduler git+https://github.com/Rapptz/discord-ext-menus, or py -m pip install discord.py 
 discord.py apscheduler git+https://github.com/Rapptz/discord-ext-menus
+
+## Updates
     
 ### Update 0.0.32
 
