@@ -28,24 +28,25 @@ class HelpMenu(ListPageSource):
                 embed.add_field(name=name, value=value, inline=False)
 
         return embed
-    
+
     async def format_page(self, menu, entries):
         offset = (menu.current_page*self.per_page) + 1
-        
+
         fields = []
         table = ("\n".join(f"{idx+offset}. {self.ctx.bot.guild.get_member(entry[0]).display_name} (XP: {entry[1]} | Level: {entry[2]})"
         for idx, entry in enumerate(entries)))
 
         fields.append(("Ranks", table))
-        
+
         return await self.write_page(menu, offset, fields)
 
 class Exp(Cog):
     def __init__(self, bot):
+        
         self.bot = bot
 
     async def process_xp(self, message):
-        xp, lvl, xplock = db.record("SELECT XP, Level, XPLock FROM exp WHERE UserID = ?", message.author.id) 
+        xp, lvl, xplock = db.record("SELECT XP, Level, XPLock FROM exp WHERE UserID = ?", message.author.id)
 
         if datetime.utcnow() > datetime.fromisoformat(xplock):
             await self.add_xp(message, xp, lvl)
@@ -53,13 +54,13 @@ class Exp(Cog):
     async def add_xp(self, message, xp, lvl):
         xp_to_add = randint(10, 20)
         new_lvl = int(((xp+xp_to_add)//42) ** 0.55)
-        
+
         db.execute("UPDATE exp SET XP = XP + ?, Level = ?, XPLock = ? WHERE UserID = ?",
                    xp_to_add, new_lvl, (datetime.utcnow()+timedelta(seconds=60)).isoformat(), message.author.id)
-        
+
         if new_lvl > lvl:
             await self.levelup_channel.send(f"Felicidades {message.author.mention} has alcanzado el nivel {new_lvl:,}!")
-    
+
 
     async def check_lvl_rewards(self, message, lvl):
         if lvl >= 50: # Mammut
@@ -73,7 +74,7 @@ class Exp(Cog):
         elif 30 <= lvl < 40: # Master
             if (new_role := message.guild.get_role(766807991378640897)) not in message.author.roles:
                 await message.author.add_roles(new_role)
-	
+
         elif 20 <= lvl < 30: # Hechizero
             if (new_role := message.guild.get_role(766807888525393922)) not in message.author.roles:
                 await message.author.add_roles(new_role)
@@ -81,11 +82,11 @@ class Exp(Cog):
         elif 10 <= lvl < 20: # Aprendiz
             if (new_role := message.guild.get_role(766807837618995251)) not in message.author.roles:
                 await message.author.add_roles(new_role)
-				
+
         elif 5 <= lvl < 9: # Beginner
             if (new_role := message.guild.get_role(766807774742446140)) not in message.author.roles:
                 await message.author.add_roles(new_role)
-    
+
     @command(name="level")
     async def display_level(self, ctx, target: Optional[Member]):
         target = target or ctx.author
@@ -102,7 +103,7 @@ class Exp(Cog):
     async def display_rank(self, ctx, target: Optional[Member]):
         target = target or ctx.author
 
-        ids = db.column("SELECT UserID FROM exp ORDER BY XP DESC")
+        ids = db.column("SELECT UserID FROM ex ORDER BY XP DESC")
 
         try:
             await ctx.send(f"{target.display_name} está en el puesto {ids.index(target.id)+1} de {len(ids)}")
@@ -113,19 +114,19 @@ class Exp(Cog):
     @command(name="leaderboard", aliases=["lb"])
     async def display_leaderboard(self, ctx):
         records = db.records("SELECT UserID, XP, Level FROM exp ORDER BY XP DESC")
-        
+
         menu = MenuPages(source=HelpMenu(ctx, records),
-						 clear_reactions_after=True,
-						 timeout=60.0)
-		
+                         clear_reactions_after=True,
+                         timeout=60.0)
+
         await menu.start(ctx)
-    
+
     @Cog.listener()
     async def on_ready(self):
-	    if not self.bot.ready:
+        if not self.bot.ready:
                self.levelup_channel = self.bot.get_channel(766449343212421120)
                self.bot.cogs_ready.ready_up("exp")
-    
+
     @Cog.listener()
     async def on_message(self, message):
         if not message.author.bot:
