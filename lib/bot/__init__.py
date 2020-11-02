@@ -1,3 +1,4 @@
+import discord
 from asyncio import sleep
 from datetime import datetime
 from glob import glob
@@ -15,6 +16,7 @@ from pathlib import Path
 
 from ..db import db
 
+intents=discord.Intents.all()
 OWNER_IDS = [751143350299787276]
 COGS = [p.stem for p in Path(".").glob("./lib/cogs/*.py")] #The problem being the split("\\"). On linux paths are split with /, /path/to/file.
 IGNORE_EXCEPTIONS = (CommandNotFound, BadArgument)
@@ -44,8 +46,7 @@ class Bot(BotBase):
         self.scheduler = AsyncIOScheduler()
 
         db.autosave(self.scheduler)
-        super().__init__(command_prefix=get_prefix, owner_ids=OWNER_IDS)
-
+        super().__init__(command_prefix=get_prefix, owner_ids=OWNER_IDS, intents=discord.Intents.all())
     def setup(self):
         for cog in COGS:
             self.load_extension(f"lib.cogs.{cog}")
@@ -59,8 +60,8 @@ class Bot(BotBase):
                     ((guild.id,) for guild in self.guilds))
 
         db.multiexec("INSERT OR IGNORE INTO exp (UserID) VALUES (?)",
-                    ((member.id,) in guild for member in self.guild.members if not member.bot))
-        print(self.guild.members)
+                    ((member.id,) for member in self.guild.members if not member.bot))
+       
         to_remove = []
         stored_members = db.column("SELECT UserID FROM exp")
         for id_ in stored_members:
@@ -69,6 +70,7 @@ class Bot(BotBase):
 
         db.multiexec("DELETE FROM exp WHERE UserID = ?",
                     ((id_,) for id_ in to_remove))
+
         db.commit()
 
     def run(self, version):
@@ -150,8 +152,8 @@ class Bot(BotBase):
                 self.scheduler.add_job(self.rules_reminder, CronTrigger(day_of_week=0, hour=12, minute=0, second=0))
                 self.scheduler.start()
 
-                self.update_db()
 
+                self.update_db()
 
                 while not self.cogs_ready.all_ready():
                     await sleep(0.5)

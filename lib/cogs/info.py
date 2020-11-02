@@ -37,8 +37,8 @@ class Info(Cog):
     @command(name="serverinfo", aliases=["guildinfo"])
     async def serverinfo(self, ctx):
         embed = Embed(title="Server information",
-					  colour=ctx.guild.owner.colour,
-					  timestamp=datetime.utcnow())
+                colour=ctx.guild.owner.colour,
+                timestamp=datetime.utcnow())
 
         embed.set_thumbnail(url=ctx.guild.icon_url)
 
