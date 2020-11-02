@@ -15,7 +15,7 @@ Thanks for reading this and see you soon in the new projects.
 
 ### You will need:
  - Python 3.8.0 or greater;
- - Discord.py 1.3.0 or greater;
+ - Discord.py 1.5.0 or greater;
  - Discord-ext-menus 1.0.0a or greater;
  - Apscheduler 3.6.3 or greater.
  
