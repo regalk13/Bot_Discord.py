@@ -1,8 +1,9 @@
-token.0
+lib/bot/token.0
 
 requirements.txt
 
-database.db
+*.db
+*.db-journal
 
 __pycache__
 
